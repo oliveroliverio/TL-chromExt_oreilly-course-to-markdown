@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "O'Reilly Course to Markdown",
+  "name": "Course Markdown Extractor",
   "version": "1.0",
-  "description": "Extracts O'Reilly course structure into Markdown and copies to clipboard.",
+  "description": "Extracts course structure into Markdown and copies to clipboard.",
   "permissions": ["scripting", "activeTab", "clipboardWrite"],
   "action": {
     "default_popup": "popup.html",

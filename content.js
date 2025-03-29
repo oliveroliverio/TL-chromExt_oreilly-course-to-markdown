@@ -15,7 +15,7 @@
 
     lines.forEach((line, index) => {
       if (!line) return;
-      if (/^\d+\s?(h|hr)?(\s?\d+)?m(\s?\d+s?)?$|^\d+m\s?\d*s$/i.test(line)) return; // Skip time indicators
+      if (/^\d+\s?(h|hr)?(\s?\d+)?m(\s?\d+s?)?$|^\d+m\s?\d*s$/i.test(line)) return;
 
       if (index === 0 && !line.startsWith('###')) {
         markdownLines.push(`## ${line}`);
@@ -29,52 +29,9 @@
 
   try {
     await navigator.clipboard.writeText(markdownText);
-    
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.style.position = 'fixed';
-    notification.style.top = '20px';
-    notification.style.right = '20px';
-    notification.style.padding = '15px 20px';
-    notification.style.background = '#4CAF50';
-    notification.style.color = 'white';
-    notification.style.borderRadius = '5px';
-    notification.style.zIndex = '9999';
-    notification.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
-    notification.textContent = "✅ Markdown copied to clipboard!";
-    
-    document.body.appendChild(notification);
-    
-    // Remove notification after 3 seconds
-    setTimeout(() => {
-      notification.style.opacity = '0';
-      notification.style.transition = 'opacity 0.5s';
-      setTimeout(() => notification.remove(), 500);
-    }, 3000);
-    
+    alert("✅ Markdown copied to clipboard!");
   } catch (err) {
     console.error("Clipboard write failed:", err);
-    
-    // Create error notification
-    const notification = document.createElement('div');
-    notification.style.position = 'fixed';
-    notification.style.top = '20px';
-    notification.style.right = '20px';
-    notification.style.padding = '15px 20px';
-    notification.style.background = '#F44336';
-    notification.style.color = 'white';
-    notification.style.borderRadius = '5px';
-    notification.style.zIndex = '9999';
-    notification.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
-    notification.textContent = "❌ Failed to copy markdown.";
-    
-    document.body.appendChild(notification);
-    
-    // Remove notification after 3 seconds
-    setTimeout(() => {
-      notification.style.opacity = '0';
-      notification.style.transition = 'opacity 0.5s';
-      setTimeout(() => notification.remove(), 500);
-    }, 3000);
+    alert("❌ Failed to copy markdown.");
   }
 })();
