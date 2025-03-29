@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 15px;
+        width: 250px;
+        background-color: #f9f9f9;
+      }
+      .container {
+        text-align: center;
+      }
+      h2 {
+        color: #333;
+        margin-top: 0;
+        font-size: 18px;
+      }
+      p {
+        color: #666;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .button {
+        background-color: #4285f4;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-top: 10px;
+        transition: background-color 0.3s;
+      }
+      .button:hover {
+        background-color: #3367d6;
+      }
+      .status {
+        margin-top: 15px;
+        font-weight: bold;
+        height: 20px;
+      }
+      .success {
+        color: #4CAF50;
+      }
+      .error {
+        color: #F44336;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>O'Reilly Course to Markdown</h2>
+      <p>Click the button below to extract course content and copy it as Markdown to your clipboard.</p>
+      <button id="extract" class="button">Extract Markdown</button>
+      <div id="status" class="status"></div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "O'Reilly Course to Markdown",
+  "version": "1.0",
+  "description": "Extracts O'Reilly course structure into Markdown and copies to clipboard.",
+  "permissions": ["scripting", "activeTab", "clipboardWrite"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "128": "icon.png"
+  }
+}
